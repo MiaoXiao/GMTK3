@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CreatureObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnMouseDown()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameManager.Instance.CollectCreature(this);
+        gameObject.SetActive(false);
     }
 }
