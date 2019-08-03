@@ -25,6 +25,7 @@ public class BackgroundController : MonoBehaviour
     private void Update()
     {
         float shortestDistance = GameManager.Instance.GetDistanceToClosestCreature();
+        if (shortestDistance == -1) return;
         if (shortestDistance > _distanceToStartFade) _background.color = _furthestFromCreature;
         else if (shortestDistance < _distanceToFullFade) _background.color = _closestToCreature;
         else
