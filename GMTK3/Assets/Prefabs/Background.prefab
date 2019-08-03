@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4413108143288651131}
   - component: {fileID: 8369894057586310848}
+  - component: {fileID: 3629831451350700568}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -79,3 +80,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3629831451350700568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187848808601235094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dea7e0d497aff48a2392d20f9c2af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceToFullFade: 100
+  _distanceToStartFade: 1000
+  _closestToCreature: {r: 0, g: 0, b: 0, a: 1}
+  _furthestFromCreature: {r: 1, g: 1, b: 1, a: 1}
