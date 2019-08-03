@@ -7,12 +7,13 @@ public class GameManager : Singleton<GameManager>
 
     public Checkpoint ActiveCheckpoint = null;
 
-    private PlayerController _player;
+    [HideInInspector]
+    public GameObject Player;
 
     private void Awake()
     {
         _uncollectedCreatures = new List<CreatureObject>(FindObjectsOfType<CreatureObject>());
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void CollectCreature(CreatureObject c)
@@ -41,11 +42,11 @@ public class GameManager : Singleton<GameManager>
     {
         if (ActiveCheckpoint == null)
         {
-            _player.transform.position = new Vector2(0, 0);
+            Player.transform.position = new Vector2(0, 0);
         }
         else
         {
-            _player.transform.position = ActiveCheckpoint.transform.position;
+            Player.transform.position = ActiveCheckpoint.transform.position;
         }
     }
 
@@ -56,7 +57,7 @@ public class GameManager : Singleton<GameManager>
         float shortest = Mathf.NegativeInfinity;
         for(int i = 0; i < _uncollectedCreatures.Count; ++i)
         {
-            float currentDist = Vector2.Distance(_uncollectedCreatures[i].transform.position, _player.transform.position);
+            float currentDist = Vector2.Distance(_uncollectedCreatures[i].transform.position, Player.transform.position);
             if (currentDist < shortest)
             {
                 shortest = currentDist;
