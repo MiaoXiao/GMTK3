@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Creature : MonoBehaviour
+public class CreatureObject : MonoBehaviour
 {
     public void OnMouseDown()
     {
