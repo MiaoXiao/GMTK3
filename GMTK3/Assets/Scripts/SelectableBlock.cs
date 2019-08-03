@@ -2,17 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectableBlocks : MonoBehaviour
+public class SelectableBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    [SerializeField]
+    private bool IsStatic;
+    [SerializeField]
+    private Sprite HoverEmpty;
+    [SerializeField]
+    private Sprite ClickEmpty;
+    [SerializeField]
+    private Sprite HoverClick;
+    [SerializeField]
+    private Sprite ClickClick;
+
+    void Awake(){
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+
     }
+
+    void OnMouseDown(){
+        if (IsStatic == true){
+            return;
+        }
+        else{
+            GameObject.Destroy(this.gameObject);
+        }
+    }
+
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreatureObject : MonoBehaviour
+public class Creature : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
