@@ -3,7 +3,10 @@ guid: 233bead2daf8cc74795898d748adef89
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ActiveCheckpoint: {instanceID: 0}
+  - Player: {instanceID: 0}
+  - nightmareFuel: {fileID: 21300000, guid: 48b897e51fc32e148b7f8b692e225b3d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

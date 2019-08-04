@@ -12,6 +12,9 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector]
     public GameObject Player;
 
+    [SerializeField]
+    Sprite nightmareFuel;
+
     private void Awake()
     {
         _uncollectedCreatures = new List<CreatureObject>(FindObjectsOfType<CreatureObject>());
@@ -37,7 +40,8 @@ public class GameManager : Singleton<GameManager>
 
     public void Win()
     {
-
+        Player.transform.position = new Vector3(-140, -57, 0);
+        Player.GetComponent<SpriteRenderer>().sprite = nightmareFuel;
     }
 
     public void TeleportToLastCheckpoint()
