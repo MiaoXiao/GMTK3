@@ -8,6 +8,9 @@ public class SelectableBlock : MonoBehaviour
     [SerializeField]
     private bool IsStatic;
 
+    [SerializeField]
+    private bool SetActiveOnStart;
+
     //HoverEmpty is when you hover over the block when it it just a white background
     //HoverClicked is when you hover over the block when the block is revealed
     //Clicked is when the player activates the block
@@ -32,6 +35,10 @@ public class SelectableBlock : MonoBehaviour
         IsClicked = false;
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
         spriteRen.sprite = Empty;
+
+        if(SetActiveOnStart == true){
+            SetActive();
+        }
     }
 
     // Update is called once per frame
@@ -46,18 +53,10 @@ public class SelectableBlock : MonoBehaviour
         else{
             if (spriteRen.sprite == HoverEmpty)
             {
-                Debug.Log("Clicked: Change to clicked");
-                spriteRen.sprite = Clicked;
-                foreach(Collider2D i in colliderList){
-                    i.isTrigger = false;
-                }
+                SetActive();
             }
             else if (spriteRen.sprite = HoverClicked){
-                Debug.Log("Clicked: Change to empty");
-                spriteRen.sprite = Empty;
-                foreach (Collider2D i in colliderList){
-                    i.isTrigger = true;
-                }
+                SetInactive();
             }
             else{
                 return;
@@ -112,5 +111,21 @@ public class SelectableBlock : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other){
         IsStatic = false;
+    }
+
+    void SetActive(){
+        Debug.Log("Clicked: Change to clicked");
+        spriteRen.sprite = Clicked;
+        foreach (Collider2D i in colliderList){
+            i.isTrigger = false;
+        }
+    }
+
+    void SetInactive(){
+        Debug.Log("Clicked: Change to empty");
+        spriteRen.sprite = Empty;
+        foreach (Collider2D i in colliderList){
+            i.isTrigger = true;
+        }
     }
 }
