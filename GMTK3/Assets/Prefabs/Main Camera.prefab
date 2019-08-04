@@ -95,5 +95,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1cac8ef8a28d544864a5e3a975e84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxCameraDistanceFromPlayer: 6
-  _smoothTime: 1.5
+  _maxCameraDistanceFromPlayer: 2
+  _smoothTime: 0.5
