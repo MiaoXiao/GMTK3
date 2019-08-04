@@ -12,20 +12,24 @@ public class PlayerController : MonoBehaviour
     private float distToGround;
     Rigidbody2D rb;
     Animator anim;
+    SpriteRenderer spriteRen;
     
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRen = GetComponent<SpriteRenderer>();
     }
 
     void Update(){
         anim.SetInteger("State", 0);
         if (Input.GetKey("a")){
             gameObject.transform.position = new Vector3(gameObject.transform.position.x - Time.deltaTime * speed, gameObject.transform.position.y, gameObject.transform.position.z);
+            spriteRen.flipX = true;
             anim.SetInteger("State", 1);
         }
         if (Input.GetKey("d")){
             gameObject.transform.position = new Vector3(gameObject.transform.position.x + Time.deltaTime * speed, gameObject.transform.position.y, gameObject.transform.position.z);
+            spriteRen.flipX = false;
             anim.SetInteger("State", 1);
         }
         if (Input.GetKeyDown("w") && IsGrounded()){
