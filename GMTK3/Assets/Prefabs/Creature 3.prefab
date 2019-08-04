@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9fee89d1861d8949bd6b23b80fa8b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayF: 2
+  delayF: 6
 --- !u!95 &2612460547370951717
 Animator:
   serializedVersion: 3
