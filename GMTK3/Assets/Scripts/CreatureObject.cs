@@ -13,8 +13,9 @@ public class CreatureObject : MonoBehaviour
     void Update(){
         if (Input.GetKeyDown("e") && InCreature)
         {
-            Debug.Log("Pressed e");
             player.transform.position = new Vector3(0,0,0);
+            GameManager.Instance.CollectCreature(this);
+            gameObject.SetActive(false);
         }
     }
 
@@ -24,11 +25,5 @@ public class CreatureObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other){
         InCreature = false;
-    }
-
-    public void OnMouseDown()
-    {
-        GameManager.Instance.CollectCreature(this);
-        gameObject.SetActive(false);
     }
 }
