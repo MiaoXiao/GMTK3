@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("State", 2);
             rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
         }
+        if (Input.GetKeyDown("space") && IsGrounded())
+        {
+            anim.SetInteger("State", 2);
+            rb.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+        }
     }
 
     private bool IsGrounded(){
