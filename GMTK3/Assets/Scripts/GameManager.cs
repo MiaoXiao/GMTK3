@@ -7,6 +7,8 @@ public class GameManager : Singleton<GameManager>
 
     public Checkpoint ActiveCheckpoint = null;
 
+    public int numberOfKeys = 0;
+
     [HideInInspector]
     public GameObject Player;
 
