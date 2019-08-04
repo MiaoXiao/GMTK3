@@ -50,13 +50,14 @@ public class GameManager : Singleton<GameManager>
         {
             Player.transform.position = ActiveCheckpoint.transform.position;
         }
+        Camera.main.transform.position = Player.transform.position;
     }
 
     public float GetDistanceToClosestCreature()
     {
         if (_uncollectedCreatures.Count == 0) return -1f;
 
-        float shortest = Mathf.NegativeInfinity;
+        float shortest = Mathf.Infinity;
         for(int i = 0; i < _uncollectedCreatures.Count; ++i)
         {
             float currentDist = Vector2.Distance(_uncollectedCreatures[i].transform.position, Player.transform.position);

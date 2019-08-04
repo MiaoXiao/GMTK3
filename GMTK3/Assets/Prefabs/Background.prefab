@@ -74,7 +74,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 1000, y: 1000}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dea7e0d497aff48a2392d20f9c2af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceToFullFade: 100
-  _distanceToStartFade: 1000
+  _distanceToFullFade: 10
+  _distanceToStartFade: 75
   _closestToCreature: {r: 0, g: 0, b: 0, a: 1}
   _furthestFromCreature: {r: 1, g: 1, b: 1, a: 1}

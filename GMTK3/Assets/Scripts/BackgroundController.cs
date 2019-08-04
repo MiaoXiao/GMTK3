@@ -25,13 +25,15 @@ public class BackgroundController : MonoBehaviour
     private void Update()
     {
         float shortestDistance = GameManager.Instance.GetDistanceToClosestCreature();
+        Debug.LogWarning("short " + shortestDistance);
         if (shortestDistance == -1) return;
         if (shortestDistance > _distanceToStartFade) _background.color = _furthestFromCreature;
         else if (shortestDistance < _distanceToFullFade) _background.color = _closestToCreature;
         else
         {
             float percentage = (shortestDistance - _distanceToFullFade) / (_distanceToStartFade - _distanceToFullFade);
-            _background.color = Color.Lerp(_furthestFromCreature, _closestToCreature, percentage);
+            Debug.LogWarning("percentage:  " + percentage);
+            _background.color = Color.Lerp(_closestToCreature, _furthestFromCreature, percentage);
         }
     }
 }
