@@ -25,6 +25,9 @@ public class SelectableBlock : MonoBehaviour
 
     SpriteRenderer spriteRen;
 
+    [SerializeField]
+    List<Collider2D> colliderList;
+
     void Awake(){
         IsClicked = false;
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
@@ -45,10 +48,16 @@ public class SelectableBlock : MonoBehaviour
             {
                 Debug.Log("Clicked: Change to clicked");
                 spriteRen.sprite = Clicked;
+                foreach(Collider2D i in colliderList){
+                    i.isTrigger = false;
+                }
             }
             else if (spriteRen.sprite = HoverClicked){
                 Debug.Log("Clicked: Change to empty");
                 spriteRen.sprite = Empty;
+                foreach (Collider2D i in colliderList){
+                    i.isTrigger = true;
+                }
             }
             else{
                 return;
@@ -96,5 +105,12 @@ public class SelectableBlock : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        IsStatic = true;
+    }
+    void OnTriggerExit2D(Collider2D other){
+        IsStatic = false;
     }
 }
