@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         Vector3 worldMousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 finalCameraPos = Vector2.ClampMagnitude(worldMousePos - GameManager.Instance.Player.transform.position, _maxCameraDistanceFromPlayer);
+        Vector3 finalCameraPos = GameManager.Instance.Player.transform.position + Vector3.ClampMagnitude(worldMousePos - GameManager.Instance.Player.transform.position, _maxCameraDistanceFromPlayer);
         Vector3 smoothedCameraPos = Vector3.SmoothDamp(transform.position, finalCameraPos, ref velocity, _smoothTime);
         smoothedCameraPos.z = _cameraZ;
         transform.position = smoothedCameraPos;
