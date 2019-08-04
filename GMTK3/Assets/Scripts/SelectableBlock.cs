@@ -51,11 +51,11 @@ public class SelectableBlock : MonoBehaviour
             return;
         }
         else{
-            if (spriteRen.sprite == HoverEmpty)
+            if (spriteRen.sprite == HoverEmpty || spriteRen.sprite == Empty)
             {
                 SetActive();
             }
-            else if (spriteRen.sprite = HoverClicked){
+            else if (spriteRen.sprite == HoverClicked || spriteRen.sprite == Clicked){
                 SetInactive();
             }
             else{

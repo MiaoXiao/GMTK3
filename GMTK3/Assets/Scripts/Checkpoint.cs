@@ -16,5 +16,6 @@ public class Checkpoint : MonoBehaviour
         GameManager.Instance.ActiveCheckpoint = this;
 
         //@@@ Animation?
+        gameObject.GetComponent<Animator>().SetInteger("State", 1);
     }
 }
