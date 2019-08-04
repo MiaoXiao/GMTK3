@@ -82,8 +82,8 @@ MonoBehaviour:
   colliderList:
   - {fileID: 1649426676522729906}
   - {fileID: 2530851000224138380}
-  _hoverOver: {fileID: 0}
-  _clicked: {fileID: 0}
+  _hoverOver: {fileID: 8300000, guid: 9e470f04a7f16284bb7141280bc19793, type: 3}
+  _clicked: {fileID: 8300000, guid: 502e315e8a9e6ce48821dbce07f11213, type: 3}
 --- !u!212 &5328678917308485421
 SpriteRenderer:
   m_ObjectHideFlags: 0
