@@ -31,6 +31,15 @@ public class SelectableBlock : MonoBehaviour
     [SerializeField]
     List<Collider2D> colliderList;
 
+    [Header("Audio")]
+
+    [SerializeField]
+    private AudioClip _hoverOver;
+    [SerializeField]
+    private AudioClip _clicked;
+
+    private AudioSource _audioSource;
+
     void Awake(){
         IsClicked = false;
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
@@ -39,6 +48,8 @@ public class SelectableBlock : MonoBehaviour
         if(SetActiveOnStart == true){
             SetActive();
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,9 +64,11 @@ public class SelectableBlock : MonoBehaviour
         else{
             if (spriteRen.sprite == HoverEmpty || spriteRen.sprite == Empty)
             {
+                _audioSource.PlayOneShot(_clicked);
                 SetActive();
             }
             else if (spriteRen.sprite == HoverClicked || spriteRen.sprite == Clicked){
+                _audioSource.PlayOneShot(_clicked);
                 SetInactive();
             }
             else{
@@ -71,11 +84,13 @@ public class SelectableBlock : MonoBehaviour
         else{
             if (spriteRen.sprite == Clicked)
             {
+                _audioSource.PlayOneShot(_hoverOver);
                 Debug.Log("Hover: Change to click consequences");
                 spriteRen.sprite = HoverClicked;
             }
             else if (spriteRen.sprite == Empty)
             {
+                _audioSource.PlayOneShot(_hoverOver);
                 Debug.Log("Hover: Change to before click");
                 spriteRen.sprite = HoverEmpty;
             }
