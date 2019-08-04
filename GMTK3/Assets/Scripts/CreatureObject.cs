@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class CreatureObject : MonoBehaviour
 {
+    [SerializeField]
+    private float delayF;
+
     GameObject player;
 
     void Awake(){
@@ -10,9 +15,14 @@ public class CreatureObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Player") {
+            StartCoroutine("delay");
             GameManager.Instance.CollectCreature(this);
             gameObject.SetActive(false);
         }
     }
 
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(delayF);
+    }
 }
