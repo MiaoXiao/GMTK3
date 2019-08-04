@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CreatureObject : MonoBehaviour
@@ -16,13 +15,14 @@ public class CreatureObject : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Player") {
             StartCoroutine("delay");
-            GameManager.Instance.CollectCreature(this);
-            gameObject.SetActive(false);
+            GetComponent<Animator>().SetInteger("State", 1);
         }
     }
 
     IEnumerator delay()
     {
         yield return new WaitForSeconds(delayF);
+        GameManager.Instance.CollectCreature(this);
+        gameObject.SetActive(false);
     }
 }

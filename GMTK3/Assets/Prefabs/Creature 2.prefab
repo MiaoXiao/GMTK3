@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6317985514013172339}
   - component: {fileID: 2061844572}
   m_Layer: 0
-  m_Name: Creature
+  m_Name: Creature 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9533c57fe9de3f84fb5fa478f35edb2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e78211a86c18144498de01ac2f210f1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22824335, y: 0.12343502}
+  m_Offset: {x: 0.21414149, y: -0.20192099}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,7 +106,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5706215, y: 12.2026825}
+  m_Size: {x: 5.103471, y: 11.307345}
   m_EdgeRadius: 0
 --- !u!114 &6317985514013172339
 MonoBehaviour:
@@ -131,7 +131,7 @@ Animator:
   m_GameObject: {fileID: 6317985514013172336}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ea6945ca87d770949a3c0557094b37c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 90621d4ce33f994419fe52f11c648a05, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
