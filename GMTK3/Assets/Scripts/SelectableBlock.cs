@@ -7,6 +7,11 @@ public class SelectableBlock : MonoBehaviour
 
     [SerializeField]
     private bool IsStatic;
+
+    //HoverEmpty is when you hover over the block when it it just a white background
+    //HoverClicked is when you hover over the block when the block is revealed
+    //Clicked is when the player activates the block
+    //Empty is the initial stage or when the player deactivates the block
     [SerializeField]
     private Sprite HoverEmpty;
     [SerializeField]
@@ -23,6 +28,7 @@ public class SelectableBlock : MonoBehaviour
     void Awake(){
         IsClicked = false;
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
+        spriteRen.sprite = Empty;
     }
 
     // Update is called once per frame
