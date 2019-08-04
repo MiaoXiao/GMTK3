@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update(){
+        if (anim == null){
+            return;
+        }
         anim.SetInteger("State", 0);
         if (Input.GetKey("a")){
             gameObject.transform.position = new Vector3(gameObject.transform.position.x - Time.deltaTime * speed, gameObject.transform.position.y, gameObject.transform.position.z);

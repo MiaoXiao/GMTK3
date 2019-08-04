@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233bead2daf8cc74795898d748adef89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveCheckpoint: {fileID: 0}
+  numberOfKeys: 0
+  Player: {fileID: 0}
+  nightmareFuel: {fileID: 21300000, guid: 48b897e51fc32e148b7f8b692e225b3d, type: 3}

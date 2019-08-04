@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject Player;
 
     [SerializeField]
-    Sprite nightmareFuel;
+    public Sprite nightmareFuel;
 
     private void Awake()
     {
@@ -41,7 +41,10 @@ public class GameManager : Singleton<GameManager>
     public void Win()
     {
         Player.transform.position = new Vector3(-140, -57, 0);
+        Destroy(Player.GetComponent<Animator>());
+        Debug.Log(nightmareFuel);
         Player.GetComponent<SpriteRenderer>().sprite = nightmareFuel;
+        Player.transform.localScale = new Vector3(10, 10, 1);
     }
 
     public void TeleportToLastCheckpoint()
